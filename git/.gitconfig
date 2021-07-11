@@ -1,0 +1,6 @@
+[user]
+	name = Carlos Eduardo Sanchez Torres (sanchezcarlosjr)
+	email = hello@sanchezcarlosjr.com
+	username = sanchezcarlosjr
+[core]
+        excludesfile = /home/sanchezcarlosjr/.dotfiles/git/.gitignore
