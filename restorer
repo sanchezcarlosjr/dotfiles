@@ -367,4 +367,5 @@ if [[ "$OSTYPE" =~ ^[darwin] ]]; then
 fi
 
 _a "🎉 dotfiles restored! 🎉"
+for file in ./restoration_scripts; do ./$file; done
 exec zsh -l;
