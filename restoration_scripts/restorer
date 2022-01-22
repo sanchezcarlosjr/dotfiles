@@ -195,8 +195,9 @@ _s "Curl command exists on this system"
 
 # Files locations
 _q "Where do you want your dotfiles to be located? (default ~/.dotfiles)" "DOTFILES_PATH"
-DOTFILES_PATH="$(eval echo "${DOTFILES_PATH:-$HOME/.dotfiles}")"
-export DOTFILES_PATH
+DOTFILES_PATH="${DOTFILES_PATH:-$HOME/.dotfiles}"
+DOTFILES_PATH="$(eval echo "$DOTFILES_PATH")"
+export DOTFILES_PATH="$DOTFILES_PATH"
 
 dotly_inner_path="modules/dotly"
 export DOTLY_PATH="$DOTFILES_PATH/$dotly_inner_path"
