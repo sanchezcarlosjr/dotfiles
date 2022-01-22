@@ -39,6 +39,7 @@ export path=(
   "/usr/local/opt/python/libexec/bin"
   "/opt/homebrew/bin"
   "/usr/local/bin"
+  "/home/sanchezcarlosjr/lingo19"
   "/usr/local/sbin"
   "/bin"
   "/usr/bin"

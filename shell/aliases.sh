@@ -28,3 +28,16 @@ alias i.='(idea $PWD &>/dev/null &)'
 alias c.='(code $PWD &>/dev/null &)'
 alias o.='open .'
 alias up='dot package update_all'
+
+# Editors
+alias vi="nvim"
+alias vim="nvim"
+
+# Docker
+alias sip="/home/sanchezcarlosjr/Workspace/SIIIP/cli/sp"
+
+# LCC
+alias lcc="ssh al361075@lcc.ens.uabc.mx"
+
+# SIIIP
+alias siiip="ssh desarrollo1@148.231.212.237"
