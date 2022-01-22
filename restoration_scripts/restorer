@@ -188,8 +188,8 @@ export DOTFILES_PATH
 dotly_inner_path="modules/dotly"
 export DOTLY_PATH="$DOTFILES_PATH/$dotly_inner_path"
 
-# USER
-USER="$(eval echo "${USER:user}")"
+# Set USER from default USER or home location
+USER="$(eval echo "${USER:-$(basename $HOME)}")"
 export USER
 
 # Backup if currently there are any dotfiles and prepare parent directory
