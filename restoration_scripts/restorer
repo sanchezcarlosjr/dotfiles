@@ -18,18 +18,6 @@ set -euo pipefail
 SCRIPT_NAME="Dotly dotfiles recovery"
 SCRIPT_VERSION="v1.0.0"
 
-has_sudo() {
-    local prompt
-
-    prompt=$(sudo -nv 2>&1)
-    if [ $? -eq 0 ]; then
-    echo "has_sudo__pass_set"
-    elif echo $prompt | grep -q '^sudo:'; then
-    echo "has_sudo__needs_pass"
-    else
-    echo "no_sudo"
-    fi
-}
 
 # Default values
 continue=false
@@ -334,3 +322,50 @@ _w "Please be patient this could take some time...🙏"
 # Installing default dotly tools
 PATH="$PATH:/usr/local/bin:$HOME/.cargo/bin"
 echo $DOTFILES_PATH
+sudo -v
+"$DOTLY_PATH/bin/dot" self install || {
+  _e "Dotly Could not be installed but your dotfiles are restored. Use:"
+  _e "  tail -f $HOME/dotly.log"
+  _e "To know what happened and where is the point of failure"
+  _w
+}
+_a "🎉 dotfiles restored! 🎉"
+
+# Installing packages
+_q "📦 Do you want to import previous installed packages? [Y/n]" "USER_IMPORT_PACKAGES"
+if [[ "${USER_IMPORT_PACKAGES:-Y}" =~ ^[Yy] ]]; then
+  _w "Importing your packages"
+  _w "This can take a very long time, be patient...🙏"
+  {
+    "$DOTLY_PATH/bin/dot" package import >/dev/null 2>&1 | _log "Importing user packages" &&
+      _a "Packages imported 👏" &&
+      _w
+  } || {
+    _e "📦 Packages import fail"
+    _w
+  }
+fi
+
+# Importing defaults on macOS
+if [[ "$OSTYPE" =~ ^[darwin] ]]; then
+  _w
+  _w "If you want to import your previous macOS settings, if would be done from the"
+  _w "default directory $DOTFILES_PATH/os/mac/settings, if you want to restore it"
+  _w "from another path, do it manually executing 'dot mac defaults import /path/to'"
+  _w
+  _w "IMPORTANT! This overwrite all your current configuration if you answer with 'y'"
+  _w
+  _q "⚙️ Do you want to import stored macOS configuration? [y/N]" "USER_OSX_SETTINGS"
+  {
+    [[ "${USER_OSX_SETTINGS:-N}" =~ ^[Yy] ]] &&
+      "$DOTLY_PATH/bin/dot" mac defaults import >/dev/null 2>&1 | _log "Importing macOS user defaults" &&
+      _w "⚙️ Mac defaults imported 🤙" &&
+      _w
+  } || {
+    _e "⚙️ Mac defaults could not be imported"
+    _w
+  }
+fi
+
+_a "🎉 dotfiles restored! 🎉"
+exec zsh -l;
