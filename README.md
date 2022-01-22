@@ -13,9 +13,15 @@
 * Import your packages `dot package import`
 
 
-## TEMP
+## Restore your Dotfiles on Ubuntu
 ```bash
-su -c bash -c "$(curl -fsSL https://raw.githubusercontent.com/sanchezcarlosjr/dotfiles/HEAD/restoration_scripts/restorer)"
+apt-get update && apt-get install -y curl git build-essential sudo && su -c bash -c "$(curl -fsSL https://raw.githubusercontent.com/sanchezcarlosjr/dotfiles/HEAD/restoration_scripts/restorer)"
+```
+
+
+## Restore your Dotfiles on Arch Linux
+```bash
+pacman -S --noconfirm sudo; sudo pacman -Syu --noconfirm && sudo pacman -S --noconfirm git curl base-devel && su -c bash -c "$(curel -fsSL https://raw.githubusercontent.com/sanchezcarlosjr/dotfiles/HEAD/restoration_scripts/restorer)"
 ```
 
 ## Restore your Dotfiles with script
