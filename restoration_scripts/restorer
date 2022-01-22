@@ -321,7 +321,6 @@ _w "Installing dotly default tools"
 _w "Please be patient this could take some time...🙏"
 # Installing default dotly tools
 PATH="$PATH:/usr/local/bin:$HOME/.cargo/bin"
-echo $DOTFILES_PATH
 sudo -v
 "$DOTLY_PATH/bin/dot" self install || {
   _e "Dotly Could not be installed but your dotfiles are restored. Use:"
