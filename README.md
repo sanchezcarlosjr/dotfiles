@@ -12,6 +12,12 @@
 * Restart your terminal
 * Import your packages `dot package import`
 
+
+## TEMP
+```bash
+su -c bash -c "$(curl -fsSL https://raw.githubusercontent.com/sanchezcarlosjr/dotfiles/HEAD/restoration_scripts/restorer)"
+```
+
 ## Restore your Dotfiles with script
 
 Using wget
