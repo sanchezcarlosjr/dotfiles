@@ -36,10 +36,10 @@ export path=(
   "$GOPATH/bin"
   "$HOME/.cargo/bin"
   "/usr/local/opt/ruby/bin"
-  "/usr/local/opt/python/libexec/bin"
+  "/usr/local/opt/python/libexec/bin",
+  "/home/sanchezcarlosjr/lingo19",
   "/opt/homebrew/bin"
   "/usr/local/bin"
-  "/home/sanchezcarlosjr/lingo19"
   "/usr/local/sbin"
   "/bin"
   "/usr/bin"
