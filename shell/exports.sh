@@ -1,4 +1,12 @@
 # ------------------------------------------------------------------------------
+# Powerline theme config
+# ------------------------------------------------------------------------------
+export LANG='en_US.UTF-8'
+export LANGUAGE='en_US:en'
+export LC_ALL='en_US.UTF-8'
+export TERM=xterm-256color
+
+# ------------------------------------------------------------------------------
 # Codely theme config
 # ------------------------------------------------------------------------------
 export CODELY_THEME_MINIMAL=false
@@ -37,7 +45,7 @@ export path=(
   "$HOME/.cargo/bin"
   "/usr/local/opt/ruby/bin"
   "/usr/local/opt/python/libexec/bin",
-  "/home/sanchezcarlosjr/lingo19",
+  "$HOME/lingo19",
   "/opt/homebrew/bin"
   "/usr/local/bin"
   "/usr/local/sbin"
