@@ -24,6 +24,10 @@ apt-get update && apt-get install -y curl git build-essential sudo && su -c bash
 pacman -S --noconfirm sudo; sudo pacman -Syu --noconfirm && sudo pacman -S --noconfirm git curl base-devel && su -c bash -c "$(curel -fsSL https://raw.githubusercontent.com/sanchezcarlosjr/dotfiles/HEAD/restorer)"
 ```
 
+
+## Restore your Dotfiles when you cannot either be Root or use sudo
+ https://github.com/fsquillace/junest
+
 ## Restore your Dotfiles with script
 
 Using wget

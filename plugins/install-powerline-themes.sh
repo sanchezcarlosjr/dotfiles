@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 # https://github.com/deluan/zsh-in-docker
 
 set -e
