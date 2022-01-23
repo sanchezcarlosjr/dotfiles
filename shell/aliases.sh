@@ -34,7 +34,7 @@ alias vi="nvim"
 alias vim="nvim"
 
 # Docker
-alias sip="/home/sanchezcarlosjr/Workspace/SIIIP/cli/sp"
+alias sip="$HOME/Workspace/SIIIP/cli/sp"
 
 # LCC
 alias lcc="ssh al361075@lcc.ens.uabc.mx"

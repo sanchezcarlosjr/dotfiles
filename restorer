@@ -368,7 +368,3 @@ fi
 
 _a "🎉 dotfiles restored! 🎉"
 exec zsh -l;
-for file in $DOTFILES_PATH/restoration_scripts/*; do
-    [ -f "$file" ] && [ -x "$file" ] && "$file"
-done
-exec zsh -l;
