@@ -108,6 +108,7 @@ powerline10k_config() {
     append_or_replace "POWERLEVEL9K_STATUS_CROSS=true" $EXPORTS_FILE
 }
 
+install_dependencies
 
 # Handle themes
 if [ "`echo $THEME | grep -E '^http.*'`" != "" ]; then
