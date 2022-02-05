@@ -14,19 +14,26 @@
 
 
 ## Restore your Dotfiles on Ubuntu
+### Docker
 ```bash
 apt-get update && apt-get install -y curl git build-essential sudo && su -c bash -c "$(curl -fsSL https://raw.githubusercontent.com/sanchezcarlosjr/dotfiles/HEAD/restorer)"
+
+```
+### Vagrant and host Ubuntu
+```bash
+sudo apt-get update && sudo apt-get install -y curl git build-essential && bash -c "$(curl -fsSL https://raw.githubusercontent.com/sanchezcarlosjr/dotfiles/HEAD/restorer)"
 ```
 
 
 ## Restore your Dotfiles on Arch Linux
+### Docker
 ```bash
 pacman -S --noconfirm sudo; sudo pacman -Syu --noconfirm && sudo pacman -S --noconfirm git curl base-devel && su -c bash -c "$(curel -fsSL https://raw.githubusercontent.com/sanchezcarlosjr/dotfiles/HEAD/restorer)"
 ```
 
 
 ## Restore your Dotfiles when you cannot either be Root or use sudo
- https://github.com/fsquillace/junest
+https://github.com/fsquillace/junest
 
 ## Restore your Dotfiles with script
 

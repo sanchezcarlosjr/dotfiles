@@ -1,0 +1,14 @@
+#!/usr/bin/env bash 
+
+set -euo pipefail 
+source "$DOTLY_PATH/scripts/core/_main.sh" 
+
+##? Encrypt a file with AES
+##?
+##? Usage:
+##?    encrypt <file_path>
+
+docs::parse "$@"
+
+gpg -c $file_path
+mv "$file_path.gpg" "$file_path"
