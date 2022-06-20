@@ -3,4 +3,4 @@
 	email = hello@sanchezcarlosjr.com
 	username = sanchezcarlosjr
 [core]
-        excludesfile = $HOME/.dotfiles/git/.gitignore
+        excludesfile = $DOTFILES_PATH/git/.gitignore
