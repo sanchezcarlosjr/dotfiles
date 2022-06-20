@@ -368,3 +368,4 @@ fi
 
 _a "🎉 dotfiles restored! 🎉"
 exec zsh -l;
+_a "log out to see changes"
