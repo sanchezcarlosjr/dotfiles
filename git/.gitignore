@@ -22,4 +22,5 @@ libsigar-universal64-macosx.dylib
 *.no-commit.*
 
 # Python
+venv
 __pycache__
