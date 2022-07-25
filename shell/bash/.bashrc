@@ -48,3 +48,7 @@ if [ -n "$(ls -A "$DOTFILES_PATH/shell/bash/completions/")" ]; then
     source "$bash_file"
   done
 fi
+
+export LINGO_19_HOME="/home/sanchezcarlosjr/lingo19"
+
+export PATH="/home/sanchezcarlosjr/lingo19:$PATH"
