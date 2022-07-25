@@ -17,7 +17,7 @@ export CODELY_THEME_PWD_MODE="short" # full, short, home_relative
 # ------------------------------------------------------------------------------
 # Languages
 # ------------------------------------------------------------------------------
-export JAVA_HOME='/Library/Java/JavaVirtualMachines/amazon-corretto-15.jdk/Contents/Home'
+export JAVA_HOME="/usr/lib/jvm/default"
 export GEM_HOME="$HOME/.gem"
 export GOPATH="$HOME/.go"
 
@@ -29,6 +29,8 @@ if [ "$CODELY_THEME_MODE" = "dark" ]; then
 else
   fzf_colors="pointer:#db0f35,bg+:#d6d6d6,fg:#808080,fg+:#363636,hl:#8ec07c,info:#928374,header:#fffee3"
 fi
+
+export EDITOR="nvim"
 
 export FZF_DEFAULT_OPTS="--color=$fzf_colors --reverse"
 
