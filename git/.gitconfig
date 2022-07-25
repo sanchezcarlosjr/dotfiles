@@ -3,4 +3,6 @@
 	email = hello@sanchezcarlosjr.com
 	username = sanchezcarlosjr
 [core]
-        excludesfile = $HOME/.dotfiles/git/.gitignore
+        excludesfile = ~/.dotfiles/git/.gitignore
+[init]
+	defaultBranch = main

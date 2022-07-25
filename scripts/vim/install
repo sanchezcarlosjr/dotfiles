@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+source "$DOTLY_PATH/scripts/core/_main.sh"
+
+##? Install vim package 
+##?
+##? Usage:
+##?     install <git_repository>
+docs::parse "$@"
+
+cd $HOME/.local/share/nvim/site/pack
+result=$(echo $git_repository | sed 's/.*\/\(.*\)\.git/\1\/start\/\1/' )
+git clone $git_repository $result
+echo $git_repository >> $DOTFILES_PATH/editors/vim/plugins
+
