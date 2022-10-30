@@ -40,4 +40,5 @@ alias sip="$HOME/Workspace/SIIIP/cli/sp"
 alias lcc="ssh al361075@lcc.ens.uabc.mx"
 
 # SIIIP
-alias siiip="ssh desarrollo1@148.231.212.237"
+alias siiip="ssh siiip-preproduction"
+alias prosiiip="ssh siiip-production"

@@ -40,6 +40,7 @@ path+=(
 	"/opt/homebrew/bin"
 	"/usr/local/bin"
 	"/usr/local/sbin"
+	"/opt/miniconda3/bin/"
 	"/bin"
 	"/usr/bin"
 	"/usr/sbin"
