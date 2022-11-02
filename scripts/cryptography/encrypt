@@ -3,12 +3,11 @@
 set -euo pipefail 
 source "$DOTLY_PATH/scripts/core/_main.sh" 
 
-##? Encrypt a file with AES
+##? Encrypt a file
 ##?
 ##? Usage:
 ##?    encrypt <file_path>
 
 docs::parse "$@"
 
-gpg -c $file_path
-mv "$file_path.gpg" "$file_path"
+gpg --encrypt -o $file_path -r hello@sanchezcarlosjr.com $file_path
