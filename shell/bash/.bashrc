@@ -48,4 +48,3 @@ if [ -n "$(ls -A "$DOTFILES_PATH/shell/bash/completions/")" ]; then
     source "$bash_file"
   done
 fi
-alias sip="/home/cest/Workspace/SIIIP/cli/sp"
