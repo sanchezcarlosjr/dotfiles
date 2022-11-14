@@ -13,6 +13,12 @@ export JAVA_HOME='/Library/Java/JavaVirtualMachines/amazon-corretto-15.jdk/Conte
 export GEM_HOME="$HOME/.gem"
 export GOPATH="$HOME/.go"
 
+source /usr/share/nvm/init-nvm.sh
+
+# GPG User Interface
+export GPG_TTY=$(tty)
+export DEBUGINFOD_URLS="https://debuginfod.archlinux.org/"
+
 # ------------------------------------------------------------------------------
 # Apps
 # ------------------------------------------------------------------------------
