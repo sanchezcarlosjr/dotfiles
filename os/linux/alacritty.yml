@@ -115,7 +115,7 @@ font:
     #   - (macOS) Menlo
     #   - (Linux/BSD) monospace
     #   - (Windows) Consolas
-    family: IBM Plex Mono
+    family: FiraCode NerdFont
     # family: CodeNewRoman Nerd Font
     # family: RobotoMono Nerd Font
     # family: Hack
@@ -134,7 +134,7 @@ font:
     #
     # If the bold family is not specified, it will fall back to the
     # value specified for the normal font.
-    family: IBM Plex Mono
+    family: FiraCode NerdFont
     # family: CodeNewRoman Nerd Font
     # family: RobotoMono Nerd Font
     # family: Hack
@@ -153,7 +153,7 @@ font:
     #
     # If the italic amily is not specified, it will fall back to the
     # value specified for the normal font.
-    family: IBM Plex Mono
+    family: FiraCode NerdFont
     # family: CodeNewRoman Nerd Font
     # family: RobotoMono Nerd Font
     # family: Hack
@@ -172,7 +172,7 @@ font:
     #
     # If the bold italic family is not specified, it will fall back to the
     # value specified for the normal font.
-    family: IBM Plex Mono
+    family: FiraCode NerdFont
     # family: CodeNewRoman Nerd Font
     # family: RobotoMono Nerd Font
     # family: Hack
@@ -186,7 +186,7 @@ font:
     style: Bold Italic
 
   # Point size
-  size: 16.0
+  size: 17
 
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
