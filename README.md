@@ -53,3 +53,6 @@ It also supports other git repos, but you need to know your git repository url.
 
 # Warning
 If you use a path different from HOME you gotta change it manually.
+
+# TODO
+https://nvchad.com
