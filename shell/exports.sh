@@ -9,15 +9,21 @@ export CODELY_THEME_PWD_MODE="short" # full, short, home_relative
 # ------------------------------------------------------------------------------
 # Languages
 # ------------------------------------------------------------------------------
-export JAVA_HOME='/Library/Java/JavaVirtualMachines/amazon-corretto-15.jdk/Contents/Home'
 export GEM_HOME="$HOME/.gem"
 export GOPATH="$HOME/.go"
 
 source /usr/share/nvm/init-nvm.sh
+[[ ! -r $HOME/.opam/opam-init/init.zsh ]] || source $HOME/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
+source /etc/profile.d/emscripten.sh
 
 # GPG User Interface
 export GPG_TTY=$(tty)
 export DEBUGINFOD_URLS="https://debuginfod.archlinux.org/"
+export IPFS_PATH=$HOME/.ipfs
+
+# Editor and visuals
+export EDITOR=nvim
+export VISUAL=nvim
 
 # ------------------------------------------------------------------------------
 # Apps
@@ -45,8 +51,10 @@ path+=(
 	"/usr/local/opt/python/libexec/bin"
 	"/opt/homebrew/bin"
 	"/usr/local/bin"
+	"$HOME/.local/bin"
 	"/usr/local/sbin"
 	"/opt/miniconda3/bin/"
+	"$HOME/.elan/bin"
 	"/bin"
 	"/usr/bin"
 	"/usr/sbin"
