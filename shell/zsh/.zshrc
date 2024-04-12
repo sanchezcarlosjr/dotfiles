@@ -40,3 +40,6 @@ else
 fi
 unset __mamba_setup
 # <<< mamba initialize <<<
+
+# Created by `pipx` on 2024-04-09 19:25:55
+export PATH="$PATH:/home/cest/.local/bin"

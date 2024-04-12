@@ -31,3 +31,5 @@ alias up='dot package update_all'
 
 # Micromamba
 alias mb="micromamba"
+alias mbi="micromamba install"
+alias mba="micromamba activate"
