@@ -2,7 +2,7 @@
 	name = Carlos Eduardo Sanchez Torres (sanchezcarlosjr)
 	email = 24639141+sanchezcarlosjr@users.noreply.github.com
 	username = sanchezcarlosjr
-	signingkey = DB57E52EDEE4E4D2
+	signingkey = E2EEFA3FE1301D3A
 [core]
   excludesfile = ~/.dotfiles/git/.gitignore
 [init]
