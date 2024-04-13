@@ -3,10 +3,12 @@ alias sudo='sudo '
 
 alias ..="cd .."
 alias ...="cd ../.."
+alias ls="eza --icons --hyperlink"
 alias ll="ls -l"
 alias la="ls -la"
 alias ~="cd ~"
 alias dotfiles='cd $DOTFILES_PATH'
+alias wk="cd $HOME/Workspace/"
 
 # Git
 alias gaa="git add -A"
@@ -32,4 +34,9 @@ alias up='dot package update_all'
 # Micromamba
 alias mb="micromamba"
 alias mbi="micromamba install"
+
+
+# Editor
+alias ed="nvim ."
+alias e="nvim"
 alias mba="micromamba activate"
