@@ -8,4 +8,5 @@
 - link:
     ~/.dotly: os/linux/.dotly
     ~/.config/alacritty/alacritty.toml: os/linux/alacritty.toml
+    ~/.config/nvim: editors/nvim
     ~/.gitconfig: git/.gitconfig

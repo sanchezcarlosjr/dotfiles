@@ -1,16 +1,19 @@
-# Enable aliases to be sudo’ed
+#Enable aliases to be sudo’ed
 alias sudo='sudo '
 
 alias ..="cd .."
 alias ...="cd ../.."
+alias ls="eza --icons --hyperlink -snew"
 alias ll="ls -l"
 alias la="ls -la"
 alias ~="cd ~"
 alias dotfiles='cd $DOTFILES_PATH'
+alias wk="cd $HOME/Workspace/"
 
 # Git
 alias gaa="git add -A"
 alias gc='$DOTLY_PATH/bin/dot git commit'
+alias gic="git clone"
 alias gca="git add --all && git commit --amend --no-edit"
 alias gco="git checkout"
 alias gd='$DOTLY_PATH/bin/dot git pretty-diff'
@@ -33,3 +36,12 @@ alias up='dot package update_all'
 alias mb="micromamba"
 alias mbi="micromamba install"
 alias mba="micromamba activate"
+
+
+# Editor
+alias ed="nvim ."
+alias e="nvim"
+
+
+# Laravel
+alias sail="./vendor/bin/sail"
