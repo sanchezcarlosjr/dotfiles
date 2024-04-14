@@ -2,6 +2,11 @@
   .dotfiles created using <a href="https://github.com/CodelyTV/dotly">🌚 dotly</a>
 </h1>
 
+
+![Dotfiles](https://raw.githubusercontent.com/sanchezcarlosjr/sanchezcarlosjr/main/Screenshot_20240413_170426.png "Dotfiles")
+
+
+
 ## Restore your Dotfiles with script
 
 Using wget
