@@ -31,7 +31,7 @@ It also supports other git repos, but you need to know your git repository url.
 ```bash
 docker run -e TERM -e COLORTERM -w /root -it --rm debian sh -uec '
   apt-get update
-  export USER="__GITHUB_USER__"
+  export USER="sanchezcarlosjr"
   apt-get install -y curl build-essential sudo python3 git g++
   su -c bash -c "$(curl -fsSL https://raw.githubusercontent.com/CodelyTV/dotly/HEAD/restorer)"
   su -c zsh'
