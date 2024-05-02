@@ -3,11 +3,7 @@ alias sudo='sudo '
 
 alias ..="cd .."
 alias ...="cd ../.."
-<<<<<<< HEAD
 alias ls="eza --icons --hyperlink -snew"
-=======
-alias ls="eza --icons --hyperlink"
->>>>>>> d3ca3b2da1325f178f2b3f1dfb06fc239cca9e6e
 alias ll="ls -l"
 alias la="ls -la"
 alias ~="cd ~"
