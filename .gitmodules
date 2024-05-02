@@ -4,4 +4,5 @@
 	branch = main
 [submodule "editors/nvim"]
 	path = editors/nvim
-	url = git@github.com:sanchezcarlosjr/nvim.git
+  url = git@github.com:sanchezcarlosjr/nvim.git
+  branch = main
