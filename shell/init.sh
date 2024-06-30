@@ -4,4 +4,4 @@ source "$DOTFILES_PATH/shell/aliases.sh"
 source "$DOTFILES_PATH/shell/exports.sh"
 source "$DOTFILES_PATH/shell/functions.sh"
 source "/usr/share/nvm/init-nvm.sh"
-source "$HOME/Vaults/secrets/secrets.sh"
+source "$HOME/Vaults/secrets/secrets.sh" 2>/dev/null

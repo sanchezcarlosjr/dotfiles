@@ -50,3 +50,6 @@ alias e="nvim"
 
 # Laravel
 alias sail="./vendor/bin/sail"
+
+# VPN
+alias vci="sudo openfortivpn -c ~/Workspace/playground/orgullosamente-pelicano/vpn/fortivpn.config"

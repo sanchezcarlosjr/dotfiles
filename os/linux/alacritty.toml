@@ -147,8 +147,13 @@ key = "End"
 mode = "~Alt"
 mods = "Shift"
 
+[[keyboard.bindings]]
+action = "SpawnNewInstance"
+key = "Return"
+mods = "Control|Shift"
+
 [scrolling]
-history = 1500
+history = 3500
 
 [window]
 decorations = "none"

@@ -6,6 +6,11 @@ export CODELY_THEME_MODE="dark"
 export CODELY_THEME_PROMPT_IN_NEW_LINE=false
 export CODELY_THEME_PWD_MODE="short" # full, short, home_relative
 
+# Android
+export ANDROID_HOME=/home/cest/Android/Sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+
 # ------------------------------------------------------------------------------
 # Languages
 # ------------------------------------------------------------------------------
@@ -34,6 +39,7 @@ path=(
 	"$GOPATH/bin"
 	"$HOME/.cargo/bin"
 	"/usr/local/opt/ruby/bin"
+  "/home/cest/.dotnet/tools"
 	"/usr/local/opt/python/libexec/bin"
 	"/opt/homebrew/bin"
 	"/usr/local/bin"
