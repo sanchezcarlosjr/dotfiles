@@ -1,0 +1,1 @@
+'builtin' 'source' "$DOTFILES_PATH/shell/zsh/.zim/modules/powerlevel10k/powerlevel10k.zsh-theme"

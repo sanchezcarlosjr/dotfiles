@@ -6,3 +6,7 @@
 	path = editors/nvim
   url = git@github.com:sanchezcarlosjr/nvim.git
   branch = main
+[submodule "secrets"]
+	path = secrets
+  url = git@github.com:sanchezcarlosjr/secrets.git
+  branch = main
