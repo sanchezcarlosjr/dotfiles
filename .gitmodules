@@ -9,3 +9,4 @@
 [submodule "vault"]
 	path = vault
 	url = git@github.com:sanchezcarlosjr/vault.git
+  branch = main
