@@ -3,11 +3,11 @@
 </h1>
 
 
-![Dotfiles](https://raw.githubusercontent.com/sanchezcarlosjr/sanchezcarlosjr/main/Screenshot_20240413_170426.png "Dotfiles")
+![Screenshot_20240710_083738](https://github.com/sanchezcarlosjr/dotfiles/assets/24639141/e59e3e04-e8fd-4dc1-a41d-e0fee5525753)
 
 
 
-## Restore your Dotfiles with script
+## Restore your Dotfiles with a script
 
 Using wget
 ```bash
@@ -19,9 +19,9 @@ Using curl
 bash <(curl -s https://raw.githubusercontent.com/sanchezcarlosjr/dotly/HEAD/restorer)
 ```
 
-You need to know your GitHub username, repository and install ssh key if your repository is private.
+You need to know your GitHub username and repository, and install the SSH key if your repository is private.
 
-It also supports other git repos, but you need to know your git repository url.
+It also supports other git repos, but you must know your git repository URL.
 
 ## Restore your Dotfiles with Docker
 
