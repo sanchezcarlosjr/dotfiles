@@ -19,8 +19,6 @@ Using curl
 bash <(curl -s https://raw.githubusercontent.com/sanchezcarlosjr/dotly/HEAD/restorer)
 ```
 
-You need to know your GitHub username and repository, and install the SSH key if your repository is private.
-
 It also supports other git repos, but you must know your git repository URL.
 
 ## Restore your Dotfiles with Docker
