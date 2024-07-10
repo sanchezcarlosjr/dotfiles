@@ -3,7 +3,7 @@
 </h1>
 
 
-![Screenshot_20240710_083738](https://github.com/sanchezcarlosjr/dotfiles/assets/24639141/e59e3e04-e8fd-4dc1-a41d-e0fee5525753)
+![Screenshot_20240710_084118](https://github.com/sanchezcarlosjr/dotfiles/assets/24639141/270da422-17b6-4ab4-8e80-bf1da6190c2f)
 
 
 
