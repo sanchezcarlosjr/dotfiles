@@ -8,7 +8,7 @@ alias ll="ls -l"
 alias la="ls -la"
 alias ~="cd ~"
 alias dotfiles='cd $DOTFILES_PATH'
-alias wk="cd $HOME/Workspace/"
+alias wk="$HOME/Workspace/"
 
 # Git
 alias gaa="git add -A"
@@ -23,7 +23,7 @@ alias gps="git push"
 alias gpsf="git push --force"
 alias gpl="git pull --rebase --autostash"
 alias gb="git branch"
-alias gl='$DOTLY_PATH/bin/dot git pretty-log'
+alias gl="$DOTLY_PATH/bin/dot git pretty-log"
 
 # Utils
 alias k='kill -9'
@@ -32,24 +32,23 @@ alias c.='(code $PWD &>/dev/null &)'
 alias o.='open .'
 alias up='dot package update_all'
 
+# Dotly
+alias dy="$DOTLY_PATH/bin/dot"
+
 # Micromamba
 alias mb="micromamba"
 alias mbi="micromamba install"
-
-
-# Editor
-alias ed="nvim ."
-alias e="nvim"
+alias mbc="micromamba env create -f env.yml -y"
 alias mba="micromamba activate"
 
-
 # Editor
 alias ed="nvim ."
 alias e="nvim"
-
+alias vi="nvim"
 
 # Laravel
 alias sail="./vendor/bin/sail"
 
 # VPN
-alias vci="sudo openfortivpn -c ~/Workspace/playground/orgullosamente-pelicano/vpn/fortivpn.config"
+alias vpd="sudo openfortivpn -c ~/Workspace/playground/orgullosamente-pelicano/vpn/cicese_desarrollo.config"
+alias vpi="sudo openfortivpn -c ~/Workspace/playground/orgullosamente-pelicano/vpn/cicese_vpn.config"

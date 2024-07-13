@@ -5,7 +5,8 @@
 	signingkey = E2EEFA3FE1301D3A
 [core]
   excludesfile = ~/.dotfiles/git/.gitignore
-	autocrlf = input
+  autocrlf = input
+  editor = nvim
 [init]
 	defaultBranch = main
 [commit]

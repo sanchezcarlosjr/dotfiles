@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+source "$DOTLY_PATH/scripts/core/_main.sh"
+
+##? Track files in dotfiles
+##? Usage:
+##?    ln <from> <to>
+docs::parse "$@"
+
+ln $from $to
+from="~/"$(realpath --relative-to="$HOME" $from)
+to=$(realpath --relative-to="$DOTFILES_PATH" $to)
+yq --arg FROM "$from" --arg TO "$to" -y '.[2].link += {$FROM: $TO}' $DOTFILES_PATH/symlinks/conf.linux.yaml >| /tmp/conf.linux.yaml && mv /tmp/conf.linux.yaml $DOTFILES_PATH/symlinks/conf.linux.yaml
