@@ -1,0 +1,9 @@
+[Unit]
+Description={{ description }} Timer
+
+[Timer]
+OnBootSec={{ on_boot_sec }}
+OnUnitActiveSec={{ on_unit_active_sec }}
+
+[Install]
+WantedBy=timers.target

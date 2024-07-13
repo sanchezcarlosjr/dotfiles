@@ -8,7 +8,11 @@ alias ll="ls -l"
 alias la="ls -la"
 alias ~="cd ~"
 alias dotfiles='cd $DOTFILES_PATH'
-alias wk="$HOME/Workspace/"
+
+# Paths
+export WK="$HOME/Workspace/"
+export SS="/etc/systemd/system"
+export SU="$HOME/.config/systemd/user"
 
 # Git
 alias gaa="git add -A"

@@ -1,0 +1,13 @@
+[Unit]
+Description={{ description }}
+After=network.target
+
+[Service]
+ExecStart={{ exec_start }}
+Restart=always
+User={{ user }}
+WorkingDirectory={{ working_directory }}
+Environment={{ environment_variables | default('') }}
+
+[Install]
+WantedBy=multi-user.target
