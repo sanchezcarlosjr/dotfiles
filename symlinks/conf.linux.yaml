@@ -10,3 +10,4 @@
     ~/.config/kitty/kitty.conf: os/linux/kitty.conf
     ~/.config/nvim: editors/nvim
     ~/.gitconfig: git/.gitconfig
+    ~/.p10k.zsh : shell/zsh/themes/.p10k.theme

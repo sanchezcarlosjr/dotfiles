@@ -11,6 +11,49 @@ export ANDROID_HOME=/home/cest/Android/Sdk
 export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 
+# Zoxide
+export _ZO_RESOLVE_SYMLINKS=1
+
+# Terminal
+export TERM=xterm-kitty
+export COLORTERM=truecolor
+
+# Moar
+export PAGER=/bin/moar
+export MOAR='--statusbar=bold -follow'
+
+
+# Python environments
+# >>> mamba initialize >>>
+# !! Contents within this block are managed by 'mamba init' !!
+export MAMBA_EXE="$HOME/.local/bin/micromamba";
+export MAMBA_ROOT_PREFIX="$HOME/micromamba";
+__mamba_setup="$("$MAMBA_EXE" shell hook --shell zsh --root-prefix "$MAMBA_ROOT_PREFIX" 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__mamba_setup"
+else
+    alias micromamba="$MAMBA_EXE"  # Fallback on help from mamba activate
+fi
+unset __mamba_setup
+# <<< mamba initialize <<<
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/usr/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/usr/etc/profile.d/conda.sh" ]; then
+        . "/usr/etc/profile.d/conda.sh"
+    else
+        export PATH="/usr/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+
+
 # ------------------------------------------------------------------------------
 # Languages
 # ------------------------------------------------------------------------------
@@ -38,8 +81,10 @@ path=(
 	"$GEM_HOME/bin"
 	"$GOPATH/bin"
 	"$HOME/.cargo/bin"
+  "$HOME/.local/bin"
 	"/usr/local/opt/ruby/bin"
-  "/home/cest/.dotnet/tools"
+  "$HOME/.dotnet/tools"
+  "$HOME/.local/share/JetBrains/Toolbox/scripts"
 	"/usr/local/opt/python/libexec/bin"
 	"/opt/homebrew/bin"
 	"/usr/local/bin"

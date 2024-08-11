@@ -1,6 +1,7 @@
 #Enable aliases to be sudo’ed
 alias sudo='sudo '
 
+alias cd="z"
 alias ..="cd .."
 alias ...="cd ../.."
 alias ls="eza --icons --hyperlink -snew"
@@ -8,6 +9,9 @@ alias ll="ls -l"
 alias la="ls -la"
 alias ~="cd ~"
 alias dotfiles='cd $DOTFILES_PATH'
+alias cat="bat"
+alias less="moar"
+
 
 # Paths
 export WK="$HOME/Workspace/"
@@ -28,6 +32,7 @@ alias gpsf="git push --force"
 alias gpl="git pull --rebase --autostash"
 alias gb="git branch"
 alias gl="$DOTLY_PATH/bin/dot git pretty-log"
+alias grc="git rm --cached"
 
 # Utils
 alias k='kill -9'
@@ -35,6 +40,7 @@ alias i.='(idea $PWD &>/dev/null &)'
 alias c.='(code $PWD &>/dev/null &)'
 alias o.='open .'
 alias up='dot package update_all'
+alias s="kitty +kitten ssh"
 
 # Dotly
 alias dy="$DOTLY_PATH/bin/dot"
@@ -47,6 +53,7 @@ alias mba="micromamba activate"
 
 # Editor
 alias ed="nvim ."
+alias v.="nvim ."
 alias e="nvim"
 alias vi="nvim"
 

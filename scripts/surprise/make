@@ -1,0 +1,7 @@
+#!/usr/bin/make -f
+
+hello:
+	@echo "Hello, World"
+
+secret:
+	@echo "Hello, this s a secret message"
