@@ -7,3 +7,4 @@ source "/usr/share/nvm/init-nvm.sh"
 source "$HOME/Vaults/primary/secrets.sh" 2>/dev/null
 eval "$(zoxide init zsh)"
 eval $(thefuck --alias)
+

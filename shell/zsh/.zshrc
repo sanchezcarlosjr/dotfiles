@@ -1,3 +1,8 @@
+### Added by Codeium. These lines cannot be automatically removed if modified
+if command -v termium > /dev/null 2>&1; then
+  eval "$(termium shell-hook show pre)"
+fi
+### End of Codeium integration
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -34,7 +39,6 @@ source "$DOTLY_PATH/shell/zsh/bindings/dot.zsh"
 source "$DOTLY_PATH/shell/zsh/bindings/reverse_search.zsh"
 source "$DOTFILES_PATH/shell/zsh/key-bindings.zsh"
 
-
 autoload -Uz compinit
 zstyle ':completion:*' menu select
 fpath+=~/.zfunc
@@ -43,3 +47,9 @@ fpath+=~/.zfunc
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+
+### Added by Codeium. These lines cannot be automatically removed if modified
+if command -v termium > /dev/null 2>&1; then
+  eval "$(termium shell-hook show post)"
+fi
+### End of Codeium integration
