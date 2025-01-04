@@ -23,6 +23,7 @@ alias gaa="git add -A"
 alias gc='$DOTLY_PATH/bin/dot git commit'
 alias gic="git clone"
 alias gca="git add --all && git commit --amend --no-edit"
+alias gcm="git add -A && git commit"
 alias gco="git checkout"
 alias gd='$DOTLY_PATH/bin/dot git pretty-diff'
 alias gs="git status -sb"
@@ -40,7 +41,6 @@ alias i.='(idea $PWD &>/dev/null &)'
 alias c.='(code $PWD &>/dev/null &)'
 alias o.='open .'
 alias up='dot package update_all'
-alias s="kitty +kitten ssh"
 
 # Dotly
 alias dy="$DOTLY_PATH/bin/dot"
@@ -48,7 +48,8 @@ alias dy="$DOTLY_PATH/bin/dot"
 # Micromamba
 alias mb="micromamba"
 alias mbi="micromamba install"
-alias mbc="micromamba env create -f env.yml -y"
+alias mce="micromamba env create -f env.yml -y"
+alias mbc="micromamba env create -n $1"
 alias mba="micromamba activate"
 
 # Editor
@@ -60,6 +61,6 @@ alias vi="nvim"
 # Laravel
 alias sail="./vendor/bin/sail"
 
-# VPN
-alias vpd="sudo openfortivpn -c ~/Workspace/playground/orgullosamente-pelicano/vpn/cicese_desarrollo.config"
-alias vpi="sudo openfortivpn -c ~/Workspace/playground/orgullosamente-pelicano/vpn/cicese_vpn.config"
+# SSH
+alias ssh="kitty +kitten ssh"
+alias s="kitty +kitten ssh"

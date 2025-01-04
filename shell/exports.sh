@@ -22,6 +22,9 @@ export COLORTERM=truecolor
 export PAGER=/bin/moar
 export MOAR='--statusbar=bold -follow'
 
+# EDITOR
+export EDITOR=/bin/nvim
+
 
 # Python environments
 # >>> mamba initialize >>>
@@ -83,6 +86,7 @@ path=(
 	"$HOME/.cargo/bin"
   "$HOME/.local/bin"
 	"/usr/local/opt/ruby/bin"
+  "/opt/aws/mountpoint-s3/bin"
   "$HOME/.dotnet/tools"
   "$HOME/.local/share/JetBrains/Toolbox/scripts"
 	"/usr/local/opt/python/libexec/bin"

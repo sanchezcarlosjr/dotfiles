@@ -7,6 +7,8 @@ source "$DOTLY_PATH/scripts/core/_main.sh"
 ##? Track files in dotfiles
 ##? Usage:
 ##?    ln <TARGET> <LINK_NAME>
+##? Examples:
+##?    dot ln ~/.zshrc ~/.dotfiles/shell/zsh/.zshrc
 docs::parse "$@"
 
 ln $TARGET $LINK_NAME
