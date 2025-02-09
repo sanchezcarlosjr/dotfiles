@@ -1,0 +1,16 @@
+#!/usr/bin/env nix-shell
+#! nix-shell -i bash
+#! nix-shell -p bash
+#! nix-shell -I nixpkgs=https://github.com/NixOS/nixpkgs/archive/2a601aafdc5605a5133a2ca506a34a3a73377247.tar.gz
+
+set -euo pipefail
+
+source "$DOTLY_PATH/scripts/core/_main.sh"
+
+##? Add a hello message
+##?
+##? Usage:
+##?    hello
+docs::parse "$@"
+
+echo "Hello, world!"

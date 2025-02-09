@@ -1,0 +1,61 @@
+#!/usr/bin/env python
+
+#? Generate a script for use with dot
+#? Usage:
+#?    script [--language NAME] [--output path]
+
+#!/usr/bin/env python
+"""Generate custom scripts using Jinja2 and Click."""
+
+import click
+from jinja2 import Environment, FileSystemLoader
+
+import os
+
+# Define the main group for our CLI application
+@click.group()
+def cli():
+    """The main entry point of our application."""
+    pass
+
+
+@cli.command()
+@click.option(
+    '--language', 
+    "-l", 
+    prompt='Enter name for the language.',
+    help='The chosen programming language for the script.',
+    default='script',
+    type=click.Choice(os.listdir(os.path.expandvars('$DOTFILES_PATH') + '/langs/scaffolds/languages'), case_sensitive=False)
+)
+@click.option('--output', "-o", prompt='Enter the output file name.', help='The name of the output file to generate.')
+def generate(language, output):
+    """Generate a custom script based on user options."""
+    env = Environment(loader = FileSystemLoader(os.path.expandvars('$DOTFILES_PATH/langs/scaffolds/languages')))
+    template = env.get_template(language)
+
+    if not output:
+        click.echo("Please enter an output file name.")
+    else:
+        path = os.path.dirname(output)
+        
+        # Create the directory if it doesn't exist
+        if not os.path.exists(path):
+            os.makedirs(path)
+            click.echo(f"Directory '{path}' created successfully.")
+
+        # Check if the path exists and write the file content
+        if os.path.isdir(path):
+            with open(output, "w") as file:
+                file.write(template.render(language=language))
+
+            # Make the file executable
+            os.chmod(output, 0o755)
+
+            click.echo(f"Script generated successfully: {output}")
+        else:
+            click.echo(f"Error: The '{path}' path is not a valid directory.")
+
+if __name__ == "__main__":
+    """Start the CLI application when the script is run."""
+    generate()

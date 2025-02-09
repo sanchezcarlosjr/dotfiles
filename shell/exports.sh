@@ -25,6 +25,9 @@ export MOAR='--statusbar=bold -follow'
 # EDITOR
 export EDITOR=/bin/nvim
 
+# Dotfiles Scripts
+export D_SCRIPTS="$DOTFILES_PATH/scripts"
+
 
 # Python environments
 # >>> mamba initialize >>>
@@ -78,6 +81,7 @@ export FZF_DEFAULT_OPTS="--color=$fzf_colors --reverse"
 # Path - The higher it is, the more priority it has
 # ------------------------------------------------------------------------------
 path=(
+  "$HOME/.nix-profile/bin"
 	"$HOME/bin"
 	"$DOTLY_PATH/bin"
 	"$DOTFILES_PATH/bin"
