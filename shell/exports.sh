@@ -11,6 +11,11 @@ export ANDROID_HOME=/home/cest/Android/Sdk
 export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 
+# Paths
+export WK="$HOME/Workspace/"
+export SS="/etc/systemd/system"
+export SU="$HOME/.config/systemd/user"
+
 # Zoxide
 export _ZO_RESOLVE_SYMLINKS=1
 

@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+source "$DOTLY_PATH/scripts/core/_main.sh"
+
+##? Temp script for testing
+##? With nvim, you can execute this script directly in normal mode: :w | :!%:p YOUR-ARGS
+##? and save this temp script as: :! cp % $HOME/your-path
+##?
+##? Usage:
+##?  temp_script [<name>]
+docs::parse "$@"
+
+echo "Hello $name"

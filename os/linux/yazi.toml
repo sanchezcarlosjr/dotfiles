@@ -1,0 +1,14 @@
+[manager]
+sort_by = "mtime"
+sort_reverse = true
+sort_dir_first = false
+
+[opener]
+open_database = [
+	{ run = 'duckdb "$@"', desc = "Open" }
+]
+
+[open]
+prepend_rules = [
+	{ name = "*.db", use = "open_database" }
+]

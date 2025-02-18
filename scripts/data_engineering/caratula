@@ -7,10 +7,10 @@ set -euo pipefail
 
 source "$DOTLY_PATH/scripts/core/_main.sh"
 
-##? Add a hello message
+##? Transform account statement to anon cover
 ##?
 ##? Usage:
-##?    hello <name>
+##?    caratula <input> <output>
 docs::parse "$@"
 
-echo "Hello $name"
+echo $input

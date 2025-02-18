@@ -40,12 +40,12 @@ def generate(language, output):
         path = os.path.dirname(output)
         
         # Create the directory if it doesn't exist
-        if not os.path.exists(path):
+        if path != "" and not os.path.exists(path):
             os.makedirs(path)
             click.echo(f"Directory '{path}' created successfully.")
 
         # Check if the path exists and write the file content
-        if os.path.isdir(path):
+        if path == "" or os.path.isdir(path):
             with open(output, "w") as file:
                 file.write(template.render(language=language))
 
