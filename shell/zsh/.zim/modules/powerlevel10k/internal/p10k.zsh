@@ -1179,7 +1179,7 @@ function _p9k_parse_aws_config() {
 ################################################################
 # AWS Profile
 prompt_aws() {
-  typeset -g P9K_AWS_PROFILE="${AWS_VAULT:-${AWSUME_PROFILE:-${AWS_PROFILE:-$AWS_DEFAULT_PROFILE}}}"
+  typeset -g P9K_AWS_PROFILE="${AWS_SSO_PROFILE:-${AWS_VAULT:-${AWSUME_PROFILE:-${AWS_PROFILE:-$AWS_DEFAULT_PROFILE}}}}"
   local pat class state
   for pat class in "${_POWERLEVEL9K_AWS_CLASSES[@]}"; do
     if [[ $P9K_AWS_PROFILE == ${~pat} ]]; then
@@ -1206,7 +1206,7 @@ prompt_aws() {
 }
 
 _p9k_prompt_aws_init() {
-  typeset -g "_p9k__segment_cond_${_p9k__prompt_side}[_p9k__segment_index]"='${AWS_VAULT:-${AWSUME_PROFILE:-${AWS_PROFILE:-$AWS_DEFAULT_PROFILE}}}'
+  typeset -g "_p9k__segment_cond_${_p9k__prompt_side}[_p9k__segment_index]"='${AWS_SSO_PROFILE:-${AWS_VAULT:-${AWSUME_PROFILE:-${AWS_PROFILE:-$AWS_DEFAULT_PROFILE}}}}'
 }
 
 ################################################################
@@ -4918,6 +4918,10 @@ function _p9k_fetch_nordvpn_status() {
 #   POWERLEVEL9K_NORDVPN_CONNECTING_CONTENT_EXPANSION='${P9K_NORDVPN_COUNTRY_CODE}'
 #   POWERLEVEL9K_NORDVPN_CONNECTING_BACKGROUND=cyan
 function prompt_nordvpn() {
+  # This prompt segment is broken. See https://github.com/romkatv/powerlevel10k/issues/2860.
+  # It is disabled until it is fixed.
+  return
+
   unset $__p9k_nordvpn_tag P9K_NORDVPN_COUNTRY_CODE
   [[ -e /run/nordvpn/nordvpnd.sock ]] || return
   _p9k_fetch_nordvpn_status 2>/dev/null || return
@@ -5752,15 +5756,19 @@ prompt_cpu_arch() {
     state=$_p9k__cache_val[1]
     text=$_p9k__cache_val[2]
   else
-    local cmd
-    for cmd in machine arch; do
-      (( $+commands[$cmd] )) || continue
-      if text=$(command -- $cmd) 2>/dev/null && [[ $text == [a-zA-Z][a-zA-Z0-9_]# ]]; then
-        break
-      else
-        text=
-      fi
-    done
+    if [[ -r /proc/sys/kernel/arch ]]; then
+      text=$(</proc/sys/kernel/arch)
+    else
+      local cmd
+      for cmd in machine arch; do
+        (( $+commands[$cmd] )) || continue
+        if text=$(command -- $cmd) 2>/dev/null && [[ $text == [a-zA-Z][a-zA-Z0-9_]# ]]; then
+          break
+        else
+          text=
+        fi
+      done
+    fi
     state=_${${(U)text}//İ/I}
     _p9k_cache_ephemeral_set "$state" "$text"
   fi
@@ -5812,7 +5820,7 @@ _p9k_preexec2() {
   typeset -g _p9k__preexec_cmd=$2
   _p9k__timer_start=EPOCHREALTIME
   P9K_TTY=old
-  (( ! $+_p9k__iterm_cmd )) || _p9k_iterm2_preexec
+  (( ! $+_p9k__iterm_cmd )) || _p9k_iterm2_preexec "$1"
 }
 
 function _p9k_prompt_net_iface_init() {
@@ -8661,6 +8669,7 @@ function _p9k_init_cacheable() {
           amzn)                    _p9k_set_os Linux LINUX_AMZN_ICON;;
           endeavouros)             _p9k_set_os Linux LINUX_ENDEAVOUROS_ICON;;
           rocky)                   _p9k_set_os Linux LINUX_ROCKY_ICON;;
+          almalinux)               _p9k_set_os Linux LINUX_ALMALINUX_ICON;;
           guix)                    _p9k_set_os Linux LINUX_GUIX_ICON;;
           neon)                    _p9k_set_os Linux LINUX_NEON_ICON;;
           *)                       _p9k_set_os Linux LINUX_ICON;;
@@ -8877,7 +8886,17 @@ function _p9k_iterm2_precmd() {
 }
 
 function _p9k_iterm2_preexec() {
-  [[ -t 1 ]] && builtin print -n '\e]133;C;\a'
+  if [[ -t 1 ]]; then
+    if (( ${+__p9k_use_osc133_c_cmdline} )); then
+      () {
+        emulate -L zsh -o extended_glob -o no_multibyte
+        local MATCH MBEGIN MEND
+        builtin printf '\e]133;C;cmdline_url=%s\a' "${1//(#m)[^a-zA-Z0-9"\/:_.-!'()~"]/%${(l:2::0:)$(([##16]#MATCH))}}"
+      } "$1"
+    else
+      builtin print -n '\e]133;C;\a'
+    fi
+  fi
   typeset -gi _p9k__iterm_cmd=2
 }
 
@@ -9082,6 +9101,7 @@ _p9k_precmd_first() {
   if [[ -n $KITTY_SHELL_INTEGRATION && KITTY_SHELL_INTEGRATION[(wIe)no-prompt-mark] -eq 0 ]]; then
     KITTY_SHELL_INTEGRATION+=' no-prompt-mark'
     (( $+__p9k_force_term_shell_integration )) || typeset -gri __p9k_force_term_shell_integration=1
+    (( $+__p9k_use_osc133_c_cmdline         )) || typeset -gri __p9k_use_osc133_c_cmdline=1
   elif [[ $TERM_PROGRAM == WarpTerminal ]]; then
     (( $+__p9k_force_term_shell_integration )) || typeset -gri __p9k_force_term_shell_integration=1
   fi
@@ -9483,7 +9503,11 @@ if [[ $__p9k_dump_file != $__p9k_instant_prompt_dump_file && -n $__p9k_instant_p
   zf_rm -f -- $__p9k_instant_prompt_dump_file{,.zwc} 2>/dev/null
 fi
 
-typeset -g P9K_VERSION=1.20.10
+typeset -g P9K_VERSION=1.20.15
+
+if [[ ${VSCODE_SHELL_INTEGRATION-} == <1-> && ${+__p9k_force_term_shell_integration} == 0 ]]; then
+  typeset -gri __p9k_force_term_shell_integration=1
+fi
 unset VSCODE_SHELL_INTEGRATION
 
 _p9k_init_ssh

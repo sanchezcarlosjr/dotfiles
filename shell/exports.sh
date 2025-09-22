@@ -24,7 +24,7 @@ export TERM=xterm-kitty
 export COLORTERM=truecolor
 
 # Moar
-export PAGER=/bin/moar
+export PAGER=/bin/moor
 export MOAR='--statusbar=bold -follow'
 
 # EDITOR
@@ -33,37 +33,37 @@ export EDITOR=/bin/nvim
 # Dotfiles Scripts
 export D_SCRIPTS="$DOTFILES_PATH/scripts"
 
+# EZA COLORS
+export EZA_COLORS='da=1;34:gm=1;34:Su=1;34'
 
 # Python environments
 # >>> mamba initialize >>>
 # !! Contents within this block are managed by 'mamba init' !!
-export MAMBA_EXE="$HOME/.local/bin/micromamba";
-export MAMBA_ROOT_PREFIX="$HOME/micromamba";
-__mamba_setup="$("$MAMBA_EXE" shell hook --shell zsh --root-prefix "$MAMBA_ROOT_PREFIX" 2> /dev/null)"
+export MAMBA_EXE="$HOME/.local/bin/micromamba"
+export MAMBA_ROOT_PREFIX="$HOME/micromamba"
+__mamba_setup="$("$MAMBA_EXE" shell hook --shell zsh --root-prefix "$MAMBA_ROOT_PREFIX" 2>/dev/null)"
 if [ $? -eq 0 ]; then
-    eval "$__mamba_setup"
+  eval "$__mamba_setup"
 else
-    alias micromamba="$MAMBA_EXE"  # Fallback on help from mamba activate
+  alias micromamba="$MAMBA_EXE" # Fallback on help from mamba activate
 fi
 unset __mamba_setup
 # <<< mamba initialize <<<
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/usr/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+__conda_setup="$('/usr/bin/conda' 'shell.zsh' 'hook' 2>/dev/null)"
 if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
+  eval "$__conda_setup"
 else
-    if [ -f "/usr/etc/profile.d/conda.sh" ]; then
-        . "/usr/etc/profile.d/conda.sh"
-    else
-        export PATH="/usr/bin:$PATH"
-    fi
+  if [ -f "/usr/etc/profile.d/conda.sh" ]; then
+    . "/usr/etc/profile.d/conda.sh"
+  else
+    export PATH="/usr/bin:$PATH"
+  fi
 fi
 unset __conda_setup
 # <<< conda initialize <<<
-
-
 
 # ------------------------------------------------------------------------------
 # Languages
@@ -75,9 +75,9 @@ export GOPATH="$HOME/.go"
 # Apps
 # ------------------------------------------------------------------------------
 if [ "$CODELY_THEME_MODE" = "dark" ]; then
-	fzf_colors="pointer:#ebdbb2,bg+:#3c3836,fg:#ebdbb2,fg+:#fbf1c7,hl:#8ec07c,info:#928374,header:#fb4934"
+  fzf_colors="pointer:#ebdbb2,bg+:#3c3836,fg:#ebdbb2,fg+:#fbf1c7,hl:#8ec07c,info:#928374,header:#fb4934"
 else
-	fzf_colors="pointer:#db0f35,bg+:#d6d6d6,fg:#808080,fg+:#363636,hl:#8ec07c,info:#928374,header:#fffee3"
+  fzf_colors="pointer:#db0f35,bg+:#d6d6d6,fg:#808080,fg+:#363636,hl:#8ec07c,info:#928374,header:#fffee3"
 fi
 
 export FZF_DEFAULT_OPTS="--color=$fzf_colors --reverse"
@@ -87,26 +87,26 @@ export FZF_DEFAULT_OPTS="--color=$fzf_colors --reverse"
 # ------------------------------------------------------------------------------
 path=(
   "$HOME/.nix-profile/bin"
-	"$HOME/bin"
-	"$DOTLY_PATH/bin"
-	"$DOTFILES_PATH/bin"
-	"$GEM_HOME/bin"
-	"$GOPATH/bin"
-	"$HOME/.cargo/bin"
+  "$HOME/bin"
+  "$DOTLY_PATH/bin"
+  "$DOTFILES_PATH/bin"
+  "$GEM_HOME/bin"
+  "$GOPATH/bin"
+  "$HOME/.cargo/bin"
   "$HOME/.local/bin"
-	"/usr/local/opt/ruby/bin"
+  "/usr/local/opt/ruby/bin"
   "/opt/aws/mountpoint-s3/bin"
   "$HOME/.dotnet/tools"
   "$HOME/.local/share/JetBrains/Toolbox/scripts"
-	"/usr/local/opt/python/libexec/bin"
-	"/opt/homebrew/bin"
-	"/usr/local/bin"
-	"/usr/local/sbin"
-	"/bin"
-	"/usr/bin"
-	"/usr/sbin"
-	"/sbin"
-	"$path"
+  "/usr/local/opt/python/libexec/bin"
+  "/opt/homebrew/bin"
+  "/usr/local/bin"
+  "/usr/local/sbin"
+  "/bin"
+  "/usr/bin"
+  "/usr/sbin"
+  "/sbin"
+  "$path"
 )
 
 export path

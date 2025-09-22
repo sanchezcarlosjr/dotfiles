@@ -1,4 +1,7 @@
-### End of Codeium integration
+#!/usr/bin/env zsh
+# Uncomment for debuf with `zprof`
+# zmodload zsh/zprof
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -6,14 +9,18 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-#!/usr/bin/env zsh
-# Uncomment for debuf with `zprof`
-# zmodload zsh/zprof
-
 # ZSH Ops
 setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_FCNTL_LOCK
+setopt SHARE_HISTORY
+setopt APPEND_HISTORY
+setopt INC_APPEND_HISTORY
 setopt +o nomatch
+
+# History settings
+export HISTFILE=~/.zsh_history
+export HISTSIZE=10000
+export SAVEHIST=10000
 # setopt autopushd
 
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
