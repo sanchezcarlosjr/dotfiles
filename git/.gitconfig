@@ -2,7 +2,7 @@
 	name = sanchezcarlosjr
 	email = 24639141+sanchezcarlosjr@users.noreply.github.com
   username = sanchezcarlosjr
-  signingkey = F08625A489B1DE2D
+  signingkey = 0970952489138A42
 [core]
   excludesfile = ~/.dotfiles/git/.gitignore
   autocrlf = input
